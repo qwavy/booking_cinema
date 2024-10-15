@@ -4,6 +4,15 @@ export default {
     content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+	"@/components/**/*.{js,ts,jsx,tsx}",
+	"@/components/ui/**/*.{js,ts,jsx,tsx}",
+	"./@/components/**/*.{ts,tsx}",
+	'@/pages/**/*.{ts,tsx}',
+	'./app/**/*.{ts,tsx}',
+	'./@/**/*.{ts,tsx}',
+	'./resources/css/**/*.css',
+	'./resources/js/**/*.{js,jsx}',
+	'./node_modules/@shadcn/ui/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
   	extend: {

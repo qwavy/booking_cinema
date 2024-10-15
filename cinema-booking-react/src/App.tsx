@@ -1,12 +1,15 @@
 import React from 'react';
-import {Button} from "@/components/ui/button.tsx";
-import Logo from "@/components/ui/Logo.tsx";
+import PageLayout from "@/components/ui/PageLayout/PageLayout.tsx";
+import Register from "@/pages/auth/Register/Register.tsx";
+
+import './index.css'
+import './App.css'
 
 const App = () => {
     return (
-        <div>
-            <Logo/>
-        </div>
+        <PageLayout>
+            <Register/>
+        </PageLayout>
     );
 };
 
