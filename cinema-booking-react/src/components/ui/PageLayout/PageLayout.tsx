@@ -2,14 +2,16 @@ import React from 'react';
 import './PageLayout.css'
 import '@/index.css'
 import '@/App.css'
+import { Outlet } from 'react-router-dom';
 
-const PageLayout:React.FC = ({children}) => {
+
+const PageLayout= ():JSX.Element => {
     return (
         <div className="page">
             <header>
             </header>
             <main>
-                {children}
+                <Outlet/>
             </main>
             <footer>
             </footer>
