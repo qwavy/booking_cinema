@@ -10,7 +10,7 @@ const PageLayout= ():JSX.Element => {
         <div className="page">
             <header>
             </header>
-            <main>
+            <main className="main">
                 <Outlet/>
             </main>
             <footer>

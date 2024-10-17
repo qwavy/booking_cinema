@@ -1,7 +1,13 @@
 .page{
+    min-height: 100vh;
     max-width: 1600px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
+}
+
+.main{
+    height: 100%;
     margin: auto;
 }

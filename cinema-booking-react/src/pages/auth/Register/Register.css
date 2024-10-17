@@ -6,3 +6,11 @@
 .form-input{
     width: 300px;
 }
+
+.link-to{
+    margin-top: 10px;
+    text-align: center;
+}
+.link-to-text{
+    text-decoration: black underline;
+}

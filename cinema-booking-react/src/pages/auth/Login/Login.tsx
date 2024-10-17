@@ -16,13 +16,14 @@ import {useForm} from "react-hook-form";
 
 import { z } from "zod"
 import {zodResolver} from "@hookform/resolvers/zod";
+import {Link} from "react-router-dom";
 
 const formSchema = z.object({
     username: z.string().min(2).max(50),
     password: z.string().min(8).max(32)
 })
 
-const Register = ():JSX.Element => {
+const Login = ():JSX.Element => {
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -70,11 +71,16 @@ const Register = ():JSX.Element => {
                             </FormItem>
                         )}
                     />
-                    <Button type="submit" >Submit</Button>
+                    <Button type="submit" className="w-full">Submit</Button>
                 </form>
             </Form>
+            <div className="link-to">
+                <Link to="/register" className="font-medium link-to-text">
+                    i dont have account
+                </Link>
+            </div>
         </div>
     )
 };
 
-export default Register;
+export default Login;
