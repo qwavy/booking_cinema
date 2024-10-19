@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Login.css'
+import styles from './Login.module.css'
 
 import { Button } from "@/components/UI/button"
 import {
@@ -38,7 +38,7 @@ const Login = ():JSX.Element => {
     }
 
     return (
-        <div className="login-page">
+        <div className={styles.loginPage}>
             <h1 className="font-black text-2xl text-center mb-8">Login</h1>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -49,7 +49,7 @@ const Login = ():JSX.Element => {
                             <FormItem>
                                 <FormLabel>Username</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="shadcn" {...field} className="form-input"/>
+                                    <Input placeholder="shadcn" {...field} className={styles.formInput}/>
                                 </FormControl>
                                 <FormDescription>
                                     This is your public display name.
@@ -74,8 +74,8 @@ const Login = ():JSX.Element => {
                     <Button type="submit" className="w-full">Submit</Button>
                 </form>
             </Form>
-            <div className="link-to">
-                <Link to="/register" className="font-medium link-to-text">
+            <div className={styles.linkTo}>
+                <Link to="/register" className={styles.linkToText}>
                     i dont have account
                 </Link>
             </div>

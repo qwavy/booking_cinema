@@ -1,11 +1,11 @@
 import React from 'react';
-import './Logo.css'
+import styles from './Logo.module.css'
 import {LogoProps} from "@/types/components/logo.ts";
 
 
 const Logo = ({ variant }: LogoProps):JSX.Element => {
     return (
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" className={variant}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" className={styles.varint}>
 
                 <g id="atlassian">
 

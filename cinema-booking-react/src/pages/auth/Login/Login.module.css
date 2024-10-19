@@ -1,7 +1,11 @@
-.link-to{
+.linkTo{
     margin-top: 10px;
     text-align: center;
 }
-.link-to-text{
+.linkToText{
     text-decoration: black underline;
+    font-weight: 500;
+}
+.formInput{
+    width: 300px;
 }
