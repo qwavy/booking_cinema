@@ -3,6 +3,7 @@ import PageLayout from "@/components/UI/PageLayout/PageLayout.tsx";
 import Register from "@/pages/auth/Register/Register.tsx";
 import Login from "@/pages/auth/Login/Login.tsx";
 import MoviePage from "@/components/MoviePage/MoviePage.tsx";
+import MovieSeats from "@/components/MovieSeats/MovieSeats.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
             {
                 path: "/moviePage/:id",
                 element:<MoviePage/>
+            },
+            {
+                path:"/takedSeats",
+                element:<MovieSeats/>
             }
         ]
     }
