@@ -1,26 +1,26 @@
 import {Body, Controller, Get, HttpCode, HttpStatus, Post, Res} from "@nestjs/common";
 import { Response } from 'express';
 import {AuthService} from "../services/auth.service";
-import {User} from "../interfaces/auth";
+import {User} from "../interfaces/users";
 
 @Controller("auth")
 export class AuthController {
-    constructor(private readonly authServie:AuthService) {
+    constructor(private readonly authService:AuthService) {
     }
 
-    @Get()
-    getUsers(): User[]{
-        return this.authServie.getUsers()
+    @Get("/users")
+    getUsers(){
+        return this.authService.getUsers()
     }
 
-    @Post()
+    @Post("/register")
     registerUser(@Body() user: User){
-        this.authServie.registerUser(user)
+        this.authService.signUp(user)
     }
 
     @HttpCode(HttpStatus.OK)
     @Post("/login")
     loginUser( @Body() user:User){
-        return this.authServie.loginUser(user)
+        return this.authService.signIn(user)
     }
 }
