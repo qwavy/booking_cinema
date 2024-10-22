@@ -29,5 +29,5 @@ interface MovieSessions{
 
 export interface Movie{
     movie_info:MovieInfo,
-    movie_sessions:MovieSessions
+    movie_sessions:MovieSessions[]
 }

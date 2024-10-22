@@ -1,13 +1,20 @@
-import {Controller, Get} from "@nestjs/common";
+import {Body, Controller, Get, Post} from "@nestjs/common";
 import {MoviesService} from "../services/movies.service";
-import {Movie} from "../interfaces/movies";
 
 @Controller("movies")
 export class MoviesController{
     constructor(private readonly moviesService:MoviesService) {
     }
+
     @Get()
-    getMovies(): Movie[]{
-        return this.moviesService.getMovies()
+    helloWorld(){
+        return "hello"
     }
+
+    @Post()
+    async createMovie(@Body() body:any){
+        const { movie_sessions, ...movieData } = body
+        return await this.moviesService.create(movieData,movie_sessions)
+    }
+
 }
