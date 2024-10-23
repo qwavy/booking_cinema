@@ -14,6 +14,32 @@ export class MoviesService{
         private readonly sessionRepository: Repository<MovieSession>
     ){}
 
+    async findAll(): Promise<any>{
+
+        const movies = [
+
+        ]
+        const movie_info = await this.movieRepository.find()
+
+        for(let el of movie_info){
+            // @ts-ignore
+            const movieSession = await this.sessionRepository.find({
+                where:{
+                    movieInfo:{id:el.id}
+                }
+            })
+
+            const movie = {
+                movie_info:el,
+                movie_session:movieSession
+            }
+            movies.push(
+                movie
+            )
+        }
+        return movies
+    }
+
     async create(
         movieData: Partial<MovieInfo>,
         sessionsData: Partial<MovieSession>
@@ -34,4 +60,6 @@ export class MoviesService{
 
         return movie;
     }
+
+
 }

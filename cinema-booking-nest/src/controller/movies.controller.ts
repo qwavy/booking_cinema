@@ -7,8 +7,8 @@ export class MoviesController{
     }
 
     @Get()
-    helloWorld(){
-        return "hello"
+    getMovies(){
+        return this.moviesService.findAll()
     }
 
     @Post()
