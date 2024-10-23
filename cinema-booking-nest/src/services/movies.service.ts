@@ -14,6 +14,20 @@ export class MoviesService{
         private readonly sessionRepository: Repository<MovieSession>
     ){}
 
+    async findOne(id:string): Promise<any>{
+        const movieInfo = await this.movieRepository.findOneBy({id})
+        const movieSession = await this.sessionRepository.find({
+            where:{
+                movieInfo:{id:movieInfo.id}
+            }
+        })
+
+        return [{
+            movie_info:movieInfo,
+            movie_session:movieSession
+        }]
+    }
+
     async findAll(): Promise<any>{
 
         const movies = [
@@ -45,8 +59,6 @@ export class MoviesService{
         sessionsData: Partial<MovieSession>
     ): Promise<any>{
         const movie = this.movieRepository.create(movieData.movie_info)
-        // const movie = movieData.movie_info
-        console.log(movie)
         await this.movieRepository.save(movie);
 
 
