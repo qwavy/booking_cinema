@@ -1,24 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {MovieSessions} from "@/types/components/movies.ts";
+import {fetchMovies} from "@/api/api.ts";
 
 
-const MovieSeats = ():JSX.Element => {
-    const movie_sessions:MovieSessions[] =  {
-        cinema_name: "Cinema Plaza",
-        time: "20:30",
-        hall: 2,
-        price: {
-            adult_price: 12,
-            student_price: 9,
-            child_price: 7
-        },
-        seats: [
-            { row: "A", taked_seats: ["1", "2"] },
-            { row: "B", taked_seats: ["5", "6"] }
-        ]
-    }
-    const {seats} = movie_sessions
+const MovieSeats = ({seats}):JSX.Element => {
 
+    useEffect(() => {
+        console.log(seats)
+    }, []);
 
     return (
         <div className="">
