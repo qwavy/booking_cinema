@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
     Table,
     TableBody,
@@ -8,13 +8,15 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import {Link} from "react-router-dom";
 
 
-const MovieSession = ({session}):JSX.Element => {
+const MovieSession = ({sessions}):JSX.Element => {
+
+
     return (
         <div>
             <Table>
-                <TableCaption>A list of your recent invoices.</TableCaption>
                 <TableHeader>
                     <TableRow>
                         <TableHead className="w-[100px]">Time</TableHead>
@@ -25,13 +27,17 @@ const MovieSession = ({session}):JSX.Element => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    <TableRow>
-                        <TableCell className="font-medium">{session.time}</TableCell>
-                        <TableCell>{session.cinema_name}</TableCell>
-                        <TableCell>${session.price.adult_price}</TableCell>
-                        <TableCell>${session.price.child_price}</TableCell>
-                        <TableCell>${session.price.student_price}</TableCell>
-                    </TableRow>
+                        {sessions.map((sessionCell) => (
+                            <TableRow>
+                                <Link to="/takedSeats">
+                                    <TableCell>{sessionCell.time}</TableCell>
+                                </Link>
+                                <TableCell>{sessionCell.cinema_name}</TableCell>
+                                <TableCell>${sessionCell.price.adult_price}</TableCell>
+                                <TableCell>${sessionCell.price.child_price}</TableCell>
+                                <TableCell>${sessionCell.price.student_price}</TableCell>
+                            </TableRow>
+                        ))}
                 </TableBody>
             </Table>
 

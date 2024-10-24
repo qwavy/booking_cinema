@@ -50,9 +50,7 @@ const MoviePage = ():JSX.Element => {
                         </div>
                         <hr/>
                         <div className={styles.movieSessions}>
-                            {movieInfo.movie_session.map((session) => (
-                                <MovieSession session={session}/>
-                            ))}
+                            <MovieSession sessions={movieInfo.movie_session}/>
                         </div>
                     </div>
                 </div>

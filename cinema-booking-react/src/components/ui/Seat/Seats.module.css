@@ -1,0 +1,23 @@
+.seats{
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.seat{
+    width: 40px;
+    border: 5px solid black;
+    border-top: 0px;
+    text-align: center;
+
+}
+
+.seatNumber{
+    margin: 0;
+    padding:0;
+    height: 90%;
+    width: 100%;
+    border-radius: 20px 20px 40px 13px / 40px 40px 0px 7px;
+
+    background-color: #F2F2F2;
+}
