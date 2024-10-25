@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.header {
+    background-color: #003366;
+    padding: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+}
+
+.navLinks li {
+    margin: 0 10px;
+}
+
+.navLinks a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.hero {
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.heroContent h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.heroContent p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* О нас */
+.about {
+    padding: 40px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Услуги */
+.services {
+    padding: 40px;
+}
+
+.serviceCards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    width: 30%;
+}
+
+/* Футер */
+.footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.socialLinks {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.socialLinks li {
+    margin: 0 10px;
+}
+
+/* Секция с текстом и изображением */
+.infoSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f4f4f4;
+}
+
+.textContent {
+    width: 45%;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.textContent .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.imageContent {
+    width: 50%;
+}
+
+.imageContent img {
+    width: 100%;
+    border-radius: 10px;
+}

@@ -6,8 +6,6 @@ import Seats from "@/components/UI/Seat/Seats.tsx";
 
 const MovieSeats = ():JSX.Element => {
 
-
-
     const takedSeats = [
         { row: "A", taked_seats: ["10", "11"] },
         { row: "G", taked_seats: ["3", "4"] }
