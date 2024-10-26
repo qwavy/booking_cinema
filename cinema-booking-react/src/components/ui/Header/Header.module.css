@@ -1,0 +1,17 @@
+.header{
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.headerLogoContainer{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.headerCity{
+    font-weight: 500;
+    font-size: 18px;
+}

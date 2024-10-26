@@ -27,9 +27,6 @@ const MoviePage = ():JSX.Element => {
         fetchData()
     },[])
 
-    setTimeout(() => {
-        console.log(movie)
-    },3000)
 
 
 
