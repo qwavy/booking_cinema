@@ -2,5 +2,11 @@
     width: 100%;
 }
 
+.title{
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
 .moviesCarousel{
 }

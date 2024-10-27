@@ -23,9 +23,10 @@ const HomePage = ():JSX.Element => {
 
     return (
         <div className={styles.homePage}>
-            <div className={styles.moviesCarousel}>
+            <section className={styles.moviesCarousel}>
+                <h2 className={styles.title}>Movies</h2>
                 <MyCarousel items={movies}/>
-            </div>
+            </section>
         </div>
     )
 };

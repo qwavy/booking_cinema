@@ -1,0 +1,32 @@
+.page{
+    min-height: 100vh;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.main{
+    height: 100%;
+    margin: 0 auto;
+    margin: 70px 0;
+}
+
+@media (max-width: 1280px) {
+    .page {
+        max-width: 1024px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .page {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page {
+        max-width: 640px;
+    }
+}
