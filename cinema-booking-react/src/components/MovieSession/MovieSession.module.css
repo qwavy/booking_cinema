@@ -1,0 +1,17 @@
+.emptySessions{
+    width: 100%;
+    height: 100px;
+    margin-top: 50px;
+}
+
+.ticketIcon{
+    width: 32px;
+    height: 32px;
+    margin: auto;
+}
+
+.emptySessionsTitle{
+    font-weight: 500;
+    font-size: 17px;
+    text-align: center;
+}

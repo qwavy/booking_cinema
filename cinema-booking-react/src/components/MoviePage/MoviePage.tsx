@@ -19,7 +19,7 @@ const MoviePage = ():JSX.Element => {
             setMovie(data)
 
         }catch (e){
-            throw e
+            throw new Error(e)
         }
     }
 
@@ -31,11 +31,10 @@ const MoviePage = ():JSX.Element => {
 
 
     return (
-        <div>
-
+        <>
             {movie.map((movieInfo) => (
                 <div className={styles.moviePage}>
-                    <div>
+                    <div className={styles.movieImageContainer}>
                         <img src={movieInfo.movie_info.image} className={styles.movieImage}/>
                     </div>
                     <div className={styles.movieInfo}>
@@ -52,9 +51,7 @@ const MoviePage = ():JSX.Element => {
                     </div>
                 </div>
             ))}
-
-
-        </div>
+        </>
     );
 };
 
