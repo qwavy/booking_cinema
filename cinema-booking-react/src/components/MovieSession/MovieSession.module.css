@@ -15,3 +15,9 @@
     font-size: 17px;
     text-align: center;
 }
+
+.tableRow{
+    cursor: pointer;
+    border-radius: 12px;
+}
+

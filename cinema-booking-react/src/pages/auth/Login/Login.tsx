@@ -49,7 +49,7 @@ const Login = ():JSX.Element => {
                             <FormItem>
                                 <FormLabel>Username</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="shadcn" {...field} className={styles.formInput}/>
+                                    <Input placeholder="Enter your username" {...field} className={styles.formInput}/>
                                 </FormControl>
                                 <FormDescription>
                                     This is your public display name.
