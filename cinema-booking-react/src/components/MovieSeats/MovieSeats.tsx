@@ -3,6 +3,7 @@ import {MovieSessions} from "@/types/components/movies.ts";
 import {fetchMovies} from "@/api/api.ts";
 import Seats from "@/components/UI/Seat/Seats.tsx";
 import styles from './MovieSeats.module.css'
+import MoviePriceRate from "@/components/MoviePriceRate/MoviePriceRate.tsx";
 
 
 const MovieSeats = ():JSX.Element => {
@@ -35,7 +36,9 @@ const MovieSeats = ():JSX.Element => {
         }
     })
 
+    const pickRate = ():any => {
 
+    }
 
 
     return (
@@ -48,14 +51,18 @@ const MovieSeats = ():JSX.Element => {
                         <div className={styles.seats}>
                             {seatInfo.seats.map((seatNumber,i) => (
                                 seatNumber ? (
-                                    <button className={styles.seat}>
-                                        <p className={styles.seatNumber}>
-                                            {seatNumber}
+                                    // <button className={styles.seat} onClick={pickRate}>
+                                    //     <p className={styles.seatNumber}>
+                                    //         {seatNumber}
+                                    //     </p>
+                                    // </button>
+                                    <MoviePriceRate seatNumber={seatNumber}/>
+                                ) : <div className={styles.seats}>
+                                    <button disabled className={styles.seat}>
+                                        <p>
+                                            X
                                         </p>
                                     </button>
-
-                                ) : <div className={styles.seats}>
-                                    <button disabled>{i}</button>
                                 </div>
                             ))}
                         </div>

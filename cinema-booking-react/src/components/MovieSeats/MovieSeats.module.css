@@ -34,5 +34,5 @@
 }
 
 button:disabled{
-    background-color: darkgray;
+    background-color: red;
 }
