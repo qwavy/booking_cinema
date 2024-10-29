@@ -34,7 +34,7 @@ const MoviePriceRate = ({seatNumber,sessionsPrices}):JSX.Element => {
                     </RadioGroup>
                 </div>
                 <DialogFooter>
-                    <Button className={styles.dialogButton} onClick={}>Submit</Button>
+                    <Button className={styles.dialogButton} onClick={()}>Submit</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>
