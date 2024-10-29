@@ -9,6 +9,12 @@ import MoviePriceRate from "@/components/MoviePriceRate/MoviePriceRate.tsx";
 const MovieSeats = ():JSX.Element => {
 
 
+    const price = {
+        adult_price: 12,
+        student_price: 9,
+        child_price: 7
+    }
+
     const seats = [
 
     ]
@@ -25,7 +31,6 @@ const MovieSeats = ():JSX.Element => {
     let k = 0
 
     seats.forEach((el,i) => {
-        console.log(tookenSeats[k])
         if(el.row === tookenSeats[k]?.row){
             for(let index = 0;index < el.seats.length;index++){
                 if(tookenSeats[k].taked_seats.includes(el.seats[index])){
@@ -56,7 +61,7 @@ const MovieSeats = ():JSX.Element => {
                                     //         {seatNumber}
                                     //     </p>
                                     // </button>
-                                    <MoviePriceRate seatNumber={seatNumber}/>
+                                    <MoviePriceRate seatNumber={seatNumber} sessionsPrices={price}/>
                                 ) : <div className={styles.seats}>
                                     <button disabled className={styles.seat}>
                                         <p>

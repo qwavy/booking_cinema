@@ -11,3 +11,4 @@ export function releaseDateToYear(releaseDate:string){
   return releaseDate.split("-")[0]
 }
 
+

@@ -34,7 +34,6 @@ const Register = ():JSX.Element => {
     })
 
     const onSubmit = (values: z.infer<typeof formSchema>) => {
-        console.log(values)
     }
 
     return (

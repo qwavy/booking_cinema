@@ -4,9 +4,6 @@ import styles from './MovieItem.module.css'
 import {Link} from "react-router-dom";
 
 const MovieItem = ({item}):JSX.Element => {
-    setTimeout(() => {
-        console.log(item.genres)
-    },2000)
 
     return (
         <Link to={`/moviePage/${item.id}`} className={styles.movie}>
