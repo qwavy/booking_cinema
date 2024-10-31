@@ -1,18 +1,15 @@
-import React from 'react';
 import styles from './Seats.module.css'
 
-const Seats = ({seats}):JSX.Element => {
+const Seat = ({seatNumber} : string):JSX.Element => {
     return (
         <div className={styles.seats}>
-            {seats.map((seat) => (
-               <button className={styles.seat}>
-                   <p className={styles.seatNumber}>
-                    {seat}
-                   </p>
-               </button>
-            ))}
+           <button className={styles.seat}>
+               <p className={styles.seatNumber}>
+                {seatNumber}
+               </p>
+           </button>
         </div>
     );
 };
 
-export default Seats;
+export default Seat;

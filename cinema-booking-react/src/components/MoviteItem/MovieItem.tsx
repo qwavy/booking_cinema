@@ -1,9 +1,8 @@
-import React, {useEffect} from 'react';
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/UI/card.tsx";
 import styles from './MovieItem.module.css'
 import {Link} from "react-router-dom";
+import {MovieItemProps} from "@/components/MoviteItem/types.ts";
 
-const MovieItem = ({item}):JSX.Element => {
+const MovieItem = ({item}:MovieItemProps):JSX.Element => {
 
     return (
         <Link to={`/moviePage/${item.id}`} className={styles.movie}>

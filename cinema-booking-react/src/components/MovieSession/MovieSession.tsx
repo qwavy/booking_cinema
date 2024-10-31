@@ -1,19 +1,18 @@
-import React, {useEffect} from 'react';
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
-import {Link, redirect, useNavigate} from "react-router-dom";
+} from "@/components/UI/table"
+import {useNavigate} from "react-router-dom";
 import styles from './MovieSession.module.css'
 import ticketIcon from '@/assets/icons/ticket.svg'
+import {IMovieSession, MovieSessionsProps} from "@/components/MovieSession/types.ts";
 
 
-const MovieSession = ({sessions}):JSX.Element => {
+const MovieSession = ({sessions}:MovieSessionsProps):JSX.Element => {
 
     const navigate = useNavigate()
 
@@ -26,7 +25,7 @@ const MovieSession = ({sessions}):JSX.Element => {
             )
     }
 
-    const handleRedirect = (id):void => {
+    const handleRedirect = (id:number):void => {
         navigate(`movieSeats/${id}`)
     }
 
@@ -43,7 +42,7 @@ const MovieSession = ({sessions}):JSX.Element => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                        {sessions.map((sessionCell) => (
+                        {sessions.map((sessionCell:IMovieSession) => (
                             <TableRow onClick={() => handleRedirect(1)} className={styles.tableRow}>
                                 <TableCell>{sessionCell.time}</TableCell>
                                 <TableCell>{sessionCell.cinema_name}</TableCell>

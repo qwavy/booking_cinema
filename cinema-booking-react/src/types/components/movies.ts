@@ -12,10 +12,9 @@ export interface MoviePrice {
     child_price:number
 }
 
-export interface MovieSessionsSeats{
-    row:string,
-    taked_seats:string[]
-}
+export type MovieSessionsSeats =
+    | { row: string; seats: string[]; taked_seats?: undefined }
+    | { row: string; taked_seats?: string[]; seats?: undefined }
 
 export interface MovieSessions{
     id:number,
