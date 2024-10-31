@@ -1,12 +1,13 @@
 .page{
+    max-width: 50%;
 }
 .seatsRow{
     display: flex;
 }
 .seatsContainer{
     display: flex;
-    gap: 100px ;
     justify-content: center;
+    gap: 100px ;
     align-items: center;
 }
 
@@ -21,7 +22,6 @@
     border: 5px solid black;
     border-top: 0px;
     text-align: center;
-
 }
 
 .seatNumber{

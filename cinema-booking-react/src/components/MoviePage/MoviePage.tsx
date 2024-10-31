@@ -6,6 +6,7 @@ import {useParams} from "react-router-dom";
 import {releaseDateToYear} from "@/lib/utils.ts";
 import {Badge} from "@/components/UI/badge.tsx";
 import MovieSession from "@/components/MovieSession/MovieSession.tsx";
+import FilterByDate from "@/components/FilterByDate/FilterByDate.tsx";
 
 const MoviePage = ():JSX.Element => {
     const [movie, setMovie] = useState([])
@@ -31,6 +32,7 @@ const MoviePage = ():JSX.Element => {
 
     return (
         <>
+            <FilterByDate/>
             {movie.map((movieInfo) => (
                 <div className={styles.moviePage}>
                     <div className={styles.movieImageContainer}>

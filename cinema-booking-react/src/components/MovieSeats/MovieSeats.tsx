@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react';
 import styles from './MovieSeats.module.css'
 import MoviePriceRate from "@/components/MoviePriceRate/MoviePriceRate.tsx";
 import {MoviePrice, MovieSessionsSeats} from "@/types/components/movies.ts";
@@ -42,7 +41,6 @@ const MovieSeats = ():JSX.Element => {
 
     return (
         <div className={styles.page}>
-
             {seats.map((seatInfo) => (
                 <div className={styles.seatsContainer}>
                     <p className={styles.seatsRow}>{seatInfo.row}</p>

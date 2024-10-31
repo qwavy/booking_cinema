@@ -1,9 +1,7 @@
-import React from 'react';
 import styles from './Header.module.css'
 import Logo from "@/components/ui/Logo/Logo.tsx";
 import {Link} from "react-router-dom";
-import { buttonVariants } from "@/components/ui/button"
-import {Button} from "@/components/UI/button.tsx";
+import { buttonVariants } from "@/components/UI/button.tsx"
 
 const Header = ():JSX.Element => {
 
