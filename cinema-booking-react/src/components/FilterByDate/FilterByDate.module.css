@@ -1,0 +1,20 @@
+.calendar{
+
+}
+.calendarMonths{
+    display: flex;
+    gap: 30px;
+}
+.calendarDayWeeks{
+    display: flex;
+    gap: 30px;
+}
+.calendarCards{
+    display: flex;
+    gap: 20px;
+}
+.calendarCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
