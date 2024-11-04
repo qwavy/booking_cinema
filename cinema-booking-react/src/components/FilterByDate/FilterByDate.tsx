@@ -4,12 +4,34 @@ import styles from './FilterByDate.module.css'
 const FilterByDate = ():JSX.Element => {
 
     const active_dates = [
-        "2024-11-04",
-        "2024-11-05",
-        "2024-11-06",
-        "2024-11-07",
-        "2024-12-07",
+        {
+            month:"November",
+            dates:[
+                "2024-11-04",
+                "2024-11-05",
+                "2024-11-06",
+                "2024-11-07",
+            ]
+        },
+        {
+            month:"December",
+            dates:[
+                "2024-12-07",
+                "2024-12-08",
+                "2024-12-09",
+            ]
+        }
     ]
+
+    // const active_dates = [
+    //     "2024-11-04",
+    //     "2024-11-05",
+    //     "2024-11-06",
+    //     "2024-11-07",
+    //     "2024-12-07",
+    //     "2024-12-08",
+    //     "2024-12-09",
+    // ]
     const active_months = active_dates.map((active_date) => {
         return new Date(active_date).toLocaleString("en-GB",{ month: "long" })
     })
@@ -43,11 +65,10 @@ const FilterByDate = ():JSX.Element => {
                 </div>
                 <div className={styles.calendarCards}>
                     {active_days_week.map((active_day_week,index) => (
-                        <div className={styles.calendarCard}>
+                        <div className={styles.calendarCardActive}>
                             <h1>{active_day_week}</h1>
                             <h2>{active_days[index]}</h2>
                         </div>
-
                     ))}
                 </div>
             </div>
