@@ -32,7 +32,6 @@ const MoviePage = ():JSX.Element => {
 
     return (
         <>
-            <FilterByDate/>
             {movie.map((movieInfo) => (
                 <div className={styles.moviePage}>
                     <div className={styles.movieImageContainer}>
@@ -45,6 +44,7 @@ const MoviePage = ():JSX.Element => {
                                 <Badge>{genre}</Badge>
                             ))}
                         </div>
+                        <FilterByDate/>
                         <hr/>
                         <div className={styles.movieSessions}>
                             <MovieSession sessions={movieInfo.movie_session}/>

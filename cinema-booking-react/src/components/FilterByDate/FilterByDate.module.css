@@ -1,5 +1,5 @@
 .calendar{
-
+    display: flex;
 }
 .calendarMonths{
     display: flex;
@@ -26,4 +26,8 @@
     border:2px solid black;
     border-radius: 8px;
     padding: 4px;
+}
+
+.calendarDates{
+    display: flex;
 }
