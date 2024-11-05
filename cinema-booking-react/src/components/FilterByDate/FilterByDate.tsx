@@ -5,6 +5,7 @@ import {dateToDay, dateToDayWeek, getDaysInMonth, getNextMonth, getTodaysMonth} 
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/UI/carousel.tsx";
 import MovieItem from "@/components/MoviteItem/MovieItem.tsx";
 import classNames from "classnames";
+import {Button} from "@/components/UI/button.tsx";
 
 const FilterByDate = ():JSX.Element => {
 
@@ -104,14 +105,14 @@ const FilterByDate = ():JSX.Element => {
                             <>
                                 {acitve_date.dates.map((date) => (
                                     <CarouselItem className={classNames(styles.calendarCardActive,"sm:basis-1/2 md:basis-1/4 lg:basis-1/6 xl:basis-1/7")}>
-                                        <CarouselItem>
+                                        <Button variant={"ghost"} >
                                             <h1>
                                                 {dateToDayWeek(date)}
                                             </h1>
                                             <h2>
                                                 {dateToDay(date)}
                                             </h2>
-                                        </CarouselItem>
+                                        </Button>
                                     </CarouselItem>
                                 ))}
                             </>
