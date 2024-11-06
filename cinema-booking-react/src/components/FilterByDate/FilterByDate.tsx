@@ -53,15 +53,21 @@ const FilterByDate = ():JSX.Element => {
         }
     ]
 
-    allDates.forEach((dateObj,dateObjIndex) => {
-        dateObj.dates.forEach((date,index) => {
-            if(active_dates[dateObjIndex].dates.includes(date)){
-                allDates[dateObjIndex].dates[index] = false
-            }
+    // allDates.forEach((dateObj,dateObjIndex) => {
+    //     dateObj.dates.forEach((date,index) => {
+    //         if(!active_dates[dateObjIndex].dates.includes(date)){
+    //             allDates[dateObjIndex].dates[index] = false
+    //         }
+    //     })
+    // })
+
+    const allowedDates = allDates.map((dateObj,dateObjIndex) => {
+        return dateObj.dates.map((date,index) => {
+            return active_dates[dateObjIndex].dates.includes(date);
         })
     })
-
     console.log(allDates)
+    console.log(allowedDates)
 
     // const active_dates = [
     //     "2024-11-04",
@@ -89,42 +95,36 @@ const FilterByDate = ():JSX.Element => {
     // })
 
     return (
-        <div>
-
-            <div className={styles.calendar}>
-                <Carousel hiddenButton={true}>
-                    <div className={styles.calendarMonths}>
-                        {active_dates.map((acitve_date) => (
-                            <div>
-                                <h2>{acitve_date.month}</h2>
-                            </div>
-                        ))}
+        <Carousel hiddenButton={true}>
+            <div className={styles.calendarMonths}>
+                {active_dates.map((acitve_date) => (
+                    <div>
+                        <h2>{acitve_date.month}</h2>
                     </div>
-                    <CarouselContent>
-                        {active_dates.map((acitve_date) => (
-                            <>
-                                {acitve_date.dates.map((date) => (
-                                    <CarouselItem className={classNames(styles.calendarCardActive,"sm:basis-1/2 md:basis-1/4 lg:basis-1/6 xl:basis-1/7")}>
-                                        <Button variant={"ghost"} >
-                                            <h1>
-                                                {dateToDayWeek(date)}
-                                            </h1>
-                                            <h2>
-                                                {dateToDay(date)}
-                                            </h2>
-                                        </Button>
-                                    </CarouselItem>
-                                ))}
-                            </>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious hiddenButton={true}/>
-                    <CarouselNext hiddenButton={true}/>
-                </Carousel>
-
-
+                ))}
             </div>
-        </div>
+            <CarouselContent>
+                {allDates.map((acitve_date,active_dateIndex) => (
+                        allowedDates[active_dateIndex].map((allowedDate,allowedDateIndex) => (
+                            <CarouselItem className="sm:basis-1/11 md:basis-1/13 lg:basis-1/15 xl:basis-1/18">
+                                {
+                                    allowedDate ?
+                                        <Button variant={"ghost"} className={classNames(styles.calendarCard,styles.calendarCardActive)}>
+                                            <h2>{dateToDayWeek(allDates[active_dateIndex].dates[allowedDateIndex])}</h2>
+                                            <h3>{dateToDay(allDates[active_dateIndex].dates[allowedDateIndex])}</h3>
+                                        </Button> :
+                                        <Button disabled className={classNames(styles.calendarCard,styles.calendarCardDisabled)}>
+                                            <h2>{dateToDayWeek(allDates[active_dateIndex].dates[allowedDateIndex])}</h2>
+                                            <h3>{dateToDay(allDates[active_dateIndex].dates[allowedDateIndex])}</h3>
+                                        </Button>
+                                }
+                            </CarouselItem>
+                        ))
+                ))}
+            </CarouselContent>
+            <CarouselPrevious hiddenButton={true}/>
+            <CarouselNext hiddenButton={true}/>
+        </Carousel>
     );
 };
 

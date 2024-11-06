@@ -16,6 +16,13 @@ export default {
   ],
   theme: {
   	extend: {
+		flexBasis: {
+			'1/9': '11.1111%',
+			'1/11': '9.0909%',
+			'1/13': '7.6923%',
+			'1/15': '6.6667%',
+			'1/18': '5.5556%'
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
